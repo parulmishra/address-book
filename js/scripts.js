@@ -56,9 +56,16 @@ $(document).ready(function () {
 
  $("form").submit(function(event)
  {
+   event.preventDefault();
+   debugger;
   var fname = $("input#firstname").val();
   var lname = $("input#lastname").val();
   var phone = $("input#phonenumber").val();
+  var gender = $("#gender option:selected").val();
+  var city= $("#city option:selected").val();
+  var country= $("#country option:selected").val();
+  var housenumber= $("#housenumber").val();
+  var street = $("#street").val();
   checkPhoneNumberLength(phone);
   if (checkPhoneNumberLength(phone)==false)
   {
@@ -66,11 +73,32 @@ $(document).ready(function () {
   }
   else
   {
-   var newContact = new Contact(fname, lname, phone, Gender, Country, City, Housenumber,street);
-  $("ul#contacts").append("<li><span class='contact'>" + newContact.firstname +" "+ newContact.lastname +"</span></li>");
-  $("#gender option:selected").val();
-  $("#city option:selected").val();
-  $("#country option:selected").val();
+   var newContact = new Contact(fname, lname, phone, gender, country, city, housenumber,street);
+
+  $("ul#contacts").append("<li><span class='contact'>" + newContact.firstname +" "+ newContact.lastname +" <br>  " + newContact.houseNumber + " "+ newContact.street +" <br> "+newContact.city+" "+newContact.country+" "+newContact.phoneNumber+" </span></li>");
+
+  var fname = $("input#firstname").val("");
+  var lname = $("input#lastname").val("");
+  var phone = $("input#phonenumber").val("");
+  var gender = $("#gender option:selected").val("");
+  var city= $("#city option:selected").val("");
+  var country= $("#country option:selected").val("");
+  var housenumber= $("#housenumber").val("");
+  var street = $("#street").val("");
+
+  $("#fs").text(newContact.firstname);
+  $("#ls").text(newContact.lastname);
+  $("#hs").text(newContact.houseNumber);
+  $("#st").text(newContact.street);
+  $("#cit").text(newContact.city);
+  $("#cnt").text(newContact.country);
+  $("#ph").text(newContact.phoneNumber);
+  $("#gen").text(newContact.gender);
 }
+
+ $("#showlist").click(function() {
+   $("#contacts").show();
+ })
+
 });
 });
