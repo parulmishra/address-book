@@ -4,7 +4,68 @@
   <title>Address-Book</title>
   <script src="js/jquery-3.2.1.js"></script>
   <script src="js/scripts.js"></script>
-  <link href="css/">
-  <link href="">
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
 </head>
+<body>
+<div class="container">
+ <h2>Address Book</h2>
+ <form id="contact-form">
+ <div class="row">
+   <div class="col-md-6">
+ <p>Please add your details to make a Contact</p>
+ <br>
+ <br>
+ <div class="form-group">
+  <label for="firstname">First Name: </label>
+  <input class="form-control" type="text" name="First Name">
+</div>
+<div class="form-group">
+  <label for="lastname">Last Name: </label>
+  <input class="form-control" type="text" name="Last Name">
+</div>
+<div class="form-group">
+  <label for="country">Country: </label>
+<select class="form-control" id="country">
+  <option>India</option>
+  <option>United States</option>
+</select>
+</div>
+<div class="form-group">
+  <label for="city">City: </label>
+  <select class="form-control" id="city">
+    <option></option>
+    <option></option>
+  </select>
+</div>
+<div class="form-group">
+  <label for="street">Street: </label>
+  <input class="form-control" type="text" name="Street">
+</div>
+<div class="form-group">
+  <label for="house-number">House Number: </label>
+  <input class="form-control" type="text" name="House-Number">
+</div>
+<div class="form-group">
+  <label for="phonenumber">PhoneNumber: </label>
+  <input class="form-control" type="text" name="PhoneNumber">
+  <small class="text-muted"> Please enter number of 10 digits</small>
+</div>
+<div class="form-group">
+  <label for="gender">Gender: </label>
+  <select class = "form-control" id="gender">
+  <option>Female</option>
+  <option>Male</option>
+  </select>
+  <br>
+</div>
+  <br>
+  <br>
+  <br>
+  <button type="button" class="btn btn-success btn-block submit">Submit</button>
+</div>
+</div>
+ </form>
+</div>
+</body>
 </html>
